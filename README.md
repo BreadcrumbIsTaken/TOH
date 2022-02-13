@@ -26,6 +26,12 @@ Now you need to reload Denizen. To do this go onto the console or be in-game as 
 
 and it will reload all the scripts, allowing you to start having fun and messing around with the glyph magic!
 
+### How to use
+
+After you finished setting up the code, you can use the `/glyphs` command to get the crafting recipies of each glyph.
+
+To use a glyph, right click it!
+
 ### License
 
 <details>

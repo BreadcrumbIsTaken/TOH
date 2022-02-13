@@ -57,3 +57,43 @@ display_ice_sword_instructions:
     type: task
     script:
         - inventory open d:how_to_craft_ice_sword_glyph_inventory
+
+how_to_craft_plant_glyph_inventory:
+    type: inventory
+    inventory: chest
+    title: Plant Glyph Recipie
+    gui: true
+    size: 45
+    procedural items:
+        - determine <list[].pad_right[45].with[black_stained_glass_pane]>
+    slots:
+        - [] [] [] [] [] [] [] [] []
+        - [] [dandelion[display_name=Any Flower;lore=Excluding wither roses]] [air] [air] [] [] [] [] []
+        - [] [paper] [ink_sac] [air] [] [] [] [plant_glyph] []
+        - [] [air] [air] [air] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+
+display_plant_glyph_instructions:
+    type: task
+    script:
+        - inventory open d:how_to_craft_plant_glyph_inventory
+
+how_to_craft_plant_sword_glyph_inventory:
+    type: inventory
+    inventory: chest
+    title: Plant Glyph Recipie (Smithing table)
+    gui: true
+    size: 45
+    procedural items:
+        - determine <list[].pad_right[45].with[black_stained_glass_pane]>
+    slots:
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [iron_sword] [air] [plant_glyph] [] [] [] [ice_sword] []
+        - [] [] [] [] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+
+display_plant_sword_instructions:
+    type: task
+    script:
+        - inventory open d:how_to_craft_plant_sword_glyph_inventory

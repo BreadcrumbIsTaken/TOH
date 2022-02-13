@@ -47,7 +47,7 @@ ice_sword:
         - <white>a <yellow>Light Glyph<reset><white>!
         - <white>Right click a block
         - <white>to turn it to ice!
-        - <white>Attach a player to
+        - <white>Attack a player to
         - <white>temporarally stun them, but only
         - <white>dealing half the ammount of damage.
     enchantments:
@@ -59,4 +59,44 @@ ice_sword:
             type: smithing
             base: iron_sword
             upgrade: ice_glyph
-            retain: display|enchantments
+            retain: display
+
+plant_glyph:
+    type: item
+    material: green_dye
+    display name: <yellow>Plant Glyph
+    lore:
+        - <white>Right click to us!
+    enchantments:
+        - sharpness:1
+    mechanisms:
+        hides: ENCHANTS
+    recipes:
+        1:
+            type: shaped
+            input:
+                - dandelion/poppy/blue_orchid/allium/azure_bluet/*_tulip/oxeye_daisy/cornflower/lily_of_the_valley|air
+                - paper|ink_sac
+
+plant_sword:
+    type: item
+    material: stone_sword
+    display name: <yellow>Plant Sword
+    lore:
+        - <white>A sword infused with
+        - <white>a <yellow>Plant Glyph<reset><white>!
+        - <white>Right click a block
+        - <white>to grow a flower!
+        - <white>Attack a player to
+        - <white>trap them, but deals
+        - <white>half damage!
+    enchantments:
+        - unbreaking:1
+    mechanisms:
+        hides: ENCHANTS
+    recipes:
+        1:
+            type: smithing
+            base: stone_sword
+            upgrade: plant_glyph
+            retain: display

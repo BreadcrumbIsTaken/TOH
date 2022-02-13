@@ -6,6 +6,12 @@ activate_glyphs:
         on player right clicks block with:ice_glyph:
             - ratelimit <player> 5s
             - run glyphs.ice
+        on player right clicks block with:plant_glyph:
+            - ratelimit <player> 5s
+            - if <player.is_sneaking>:
+                - run glyphs.plant.spread
+            - else:
+                - run glyphs.plant.pillar
 
 # Will load the schematic into memory when the server starts.
 # This will (most likely) prevent the ice glyph pillar from loading a bit slower the first time it is preformed after the server resets.
@@ -19,6 +25,7 @@ activate_ice_sword:
     type: world
     events:
         on player damaged by player with:ice_sword:
+            - ratelimit <player> 5s
             - determine passively cancelled
             - hurt <context.final_damage.div[2]> <context.entity>
             - run glyph_weapons.ice_sword def.1:<context.entity>
@@ -30,8 +37,23 @@ activate_ice_sword:
             - give <context.location.material.name>
             - modifyblock <context.location> ice
 
-prevent_ice_glyph_pillar_damage:
+activate_plant_sword:
+    type: world
+    events:
+        on player damaged by player with:plant_sword:
+            - ratelimit <player> 5s
+            - determine passively cancelled
+            - hurt <context.final_damage.div[2]> <context.entity>
+            - run glyph_weapons.plant_sword def.1:<context.entity>
+        on player right clicks block with:plant_sword:
+            - ratelimit <player> 4s
+            - give <context.location.material.name>
+            - modifyblock <context.location> <list[dandelion|poppy|blue_orchid|allium|azure_bluet|pink_tulip|orange_tulip|red_tulip|white_tulip|oxeye_daisy|cornflower|lily_of_the_valley].random>
+
+prevent_glyph_power_damage:
     type: world
     events:
         on player damaged by fall flagged:using_ice_glyph:
+            - determine cancelled
+        on player damaged by fall flagged:using_plant_glyph:
             - determine cancelled
