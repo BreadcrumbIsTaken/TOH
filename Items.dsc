@@ -37,3 +37,26 @@ ice_glyph:
             input:
                 - blue_ice|air
                 - paper|ink_sac
+
+ice_sword:
+    type: item
+    material: iron_sword
+    display name: <yellow>Ice Sword
+    lore:
+        - <white>A sword infused with
+        - <white>a <yellow>Light Glyph<reset><white>!
+        - <white>Right click a block
+        - <white>to turn it to ice!
+        - <white>Attach a player to
+        - <white>temporarally stun them, but only
+        - <white>dealing half the ammount of damage.
+    enchantments:
+        - unbreaking:1
+    mechanisms:
+        hides: ENCHANTS
+    recipes:
+        1:
+            type: smithing
+            base: iron_sword
+            upgrade: ice_glyph
+            retain: display|enchantments
