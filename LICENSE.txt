@@ -1,6 +1,6 @@
 ISC License
 
-Copyright (c) Breadcrumb (https://github.com/BreadcrumbIsTaken)
+Copyright (c) 2022 Breadcrumb (https://github.com/BreadcrumbIsTaken)
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
