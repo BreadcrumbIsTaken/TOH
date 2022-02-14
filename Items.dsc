@@ -26,7 +26,7 @@ ice_glyph:
     material: light_blue_dye
     display name: <yellow>Ice Glyph
     lore:
-        - <white>Right click to us!
+        - <white>Right click to use!
     enchantments:
         - sharpness:1
     mechanisms:
@@ -66,7 +66,7 @@ plant_glyph:
     material: green_dye
     display name: <yellow>Plant Glyph
     lore:
-        - <white>Right click to us!
+        - <white>Right click to use!
     enchantments:
         - sharpness:1
     mechanisms:
@@ -100,3 +100,24 @@ plant_sword:
             base: stone_sword
             upgrade: plant_glyph
             retain: display
+
+fire_glyph:
+    type: item
+    material: orange_dye
+    display name: <yellow>Fire Glyph
+    lore:
+        - <white>Right click to use!
+    enchantments:
+        - sharpness:1
+    mechanisms:
+        hides: ENCHANTS
+    recipes:
+        1:
+            type: shaped
+            input:
+                - flint_and_steel|air
+                - paper|ink_sac
+
+fire_glyph_projectile:
+    type: item
+    material: fire_charge

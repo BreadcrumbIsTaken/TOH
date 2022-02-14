@@ -97,3 +97,23 @@ display_plant_sword_instructions:
     type: task
     script:
         - inventory open d:how_to_craft_plant_sword_glyph_inventory
+
+how_to_craft_fire_glyph_inventory:
+    type: inventory
+    inventory: chest
+    title: Fire Glyph Recipie
+    gui: true
+    size: 45
+    procedural items:
+        - determine <list[].pad_right[45].with[black_stained_glass_pane]>
+    slots:
+        - [] [] [] [] [] [] [] [] []
+        - [] [flint_and_steel] [air] [air] [] [] [] [] []
+        - [] [paper] [ink_sac] [air] [] [] [] [fire_glyph] []
+        - [] [air] [air] [air] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+
+display_fire_glyph_instructions:
+    type: task
+    script:
+        - inventory open d:how_to_craft_fire_glyph_inventory

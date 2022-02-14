@@ -4,14 +4,20 @@ activate_glyphs:
         on player right clicks block with:light_glyph:
             - run glyphs.light
         on player right clicks block with:ice_glyph:
-            - ratelimit <player> 5s
+            - ratelimit <player> 2s
             - run glyphs.ice
         on player right clicks block with:plant_glyph:
-            - ratelimit <player> 5s
+            - ratelimit <player> 2s
             - if <player.is_sneaking>:
                 - run glyphs.plant.spread
             - else:
                 - run glyphs.plant.pillar
+        on player right clicks block with:fire_glyph:
+            - ratelimit <player> 2s
+            - if <player.is_sneaking>:
+                - run glyphs.fire.ignite def.1:<context.location>
+            - else:
+                - run glyphs.fire.throw
 
 # Will load the schematic into memory when the server starts.
 # This will (most likely) prevent the ice glyph pillar from loading a bit slower the first time it is preformed after the server resets.
@@ -33,7 +39,7 @@ activate_ice_sword:
         on player damaged by freeze:
             - determine cancelled
         on player right clicks block with:ice_sword:
-            - ratelimit <player> 4s
+            - ratelimit <player> 2s
             - give <context.location.material.name>
             - modifyblock <context.location> ice
 
@@ -46,7 +52,7 @@ activate_plant_sword:
             - hurt <context.final_damage.div[2]> <context.entity>
             - run glyph_weapons.plant_sword def.1:<context.entity>
         on player right clicks block with:plant_sword:
-            - ratelimit <player> 4s
+            - ratelimit <player> 2s
             - give <context.location.material.name>
             - modifyblock <context.location> <list[dandelion|poppy|blue_orchid|allium|azure_bluet|pink_tulip|orange_tulip|red_tulip|white_tulip|oxeye_daisy|cornflower|lily_of_the_valley].random>
 
