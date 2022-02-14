@@ -12,6 +12,8 @@ Make sure that you have the plugin [Denizen](https://denizenscript.com) running 
 
 Next, you need to drag the DenizenScript source files (ones ending in `.dsc`) into the `plugins/Denizen/scripts` directory.
 
+Alternatively you can use the Drop-In-Ready version in the `Drop-In-Ready/` directory.
+
 ##### Step 3
 
 Take the schematic in the `schematics` folder and drag it into `plugins/Denizen/schematics`. If it is not there, then make it!
