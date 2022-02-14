@@ -63,3 +63,10 @@ prevent_glyph_power_damage:
             - determine cancelled
         on player damaged by fall flagged:using_plant_glyph:
             - determine cancelled
+
+# You can tell that because this is here that I accidentally dyed a sheep with a glyph while testing. :|
+prevent_dying_of_sheep:
+    type: world
+    events:
+        on sheep dyed color:
+            - determine cancelled
