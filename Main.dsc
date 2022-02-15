@@ -5,11 +5,13 @@ glyphs:
         - clickable display_ice_glyph_instructions save:ice_glyph_clickable
         - clickable display_plant_glyph_instructions save:plant_glyph_clickable
         - clickable display_fire_glyph_instructions save:fire_glyph_clickable
+        - clickable display_invisible_glyph_instructions save:invisible_glyph_clickable
 
         - narrate "To see the crafting recipe for the <yellow>Light Glyph<reset>, click <blue><element[here!].on_click[<entry[light_glyph_clickable].command>]>"
         - narrate "To see the crafting recipe for the <yellow>Ice Glyph<reset>, click <blue><element[here!].on_click[<entry[ice_glyph_clickable].command>]>"
         - narrate "To see the crafting recipe for the <yellow>Plant Glyph<reset>, click <blue><element[here!].on_click[<entry[plant_glyph_clickable].command>]>"
         - narrate "To see the crafting recipe for the <yellow>Fire Glyph<reset>, click <blue><element[here!].on_click[<entry[fire_glyph_clickable].command>]>"
+        - narrate "To see the crafting recipe for the <yellow>Invisible Glyph<reset>, click <blue><element[here!].on_click[<entry[invisible_glyph_clickable].command>]>"
         - narrate <green>---
         - run glyph_weapons
     light:
@@ -84,6 +86,15 @@ glyphs:
         ignite:
             - modifyblock <[1]> fire
             - playsound sound:BLOCK_FIRE_EXTINGUISH <[1]> pitch:.5
+    invisible:
+        cast:
+            - cast invisibility amplifier:0 duration:10s hide_particles no_icon
+            - playeffect at:<player.location> effect:PORTAL quantity:20
+            - playsound sound:BLOCK_PORTAL_TRIGGER <player.location> pitch:3
+        remove:
+            - cast invisibility remove
+            - playeffect at:<player.location> effect:PORTAL quantity:20
+            - playsound sound:BLOCK_PORTAL_TRIGGER <player.location> pitch:3
 
 light_follower_particle_update:
     type: task

@@ -18,6 +18,13 @@ activate_glyphs:
                 - run glyphs.fire.ignite def.1:<context.location>
             - else:
                 - run glyphs.fire.throw
+        on player right clicks block with:invisible_glyph:
+            - if <player.has_flag[using_invisibility_glyph]>:
+                - ratelimit <player> 5s
+                - narrate "<yellow>You can't use this while you are already invisible!"
+            - else:
+                - flag player using_invisibility_glyph expire:10s
+                - run glyphs.invisible.cast
 
 # Will load the schematic into memory when the server starts.
 # This will (most likely) prevent the ice glyph pillar from loading a bit slower the first time it is preformed after the server resets.
@@ -70,3 +77,10 @@ prevent_dying_of_sheep:
     events:
         on sheep dyed color:
             - determine cancelled
+
+trigger_invisibility_glyph_off:
+    type: world
+    events:
+        on player steps on block flagged:using_invisibility_glyph:
+            - flag player using_invisibility_glyph:!
+            - run glyphs.invisible.remove

@@ -117,3 +117,23 @@ display_fire_glyph_instructions:
     type: task
     script:
         - inventory open d:how_to_craft_fire_glyph_inventory
+
+how_to_craft_invisible_glyph_inventory:
+    type: inventory
+    inventory: chest
+    title: Invisible Glyph Recipie
+    gui: true
+    size: 45
+    procedural items:
+        - determine <list[].pad_right[45].with[black_stained_glass_pane]>
+    slots:
+        - [] [] [] [] [] [] [] [] []
+        - [] [glass] [air] [air] [] [] [] [] []
+        - [] [paper] [ink_sac] [air] [] [] [] [invisible_glyph] []
+        - [] [air] [air] [air] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+
+display_invisible_glyph_instructions:
+    type: task
+    script:
+        - inventory open d:how_to_craft_invisible_glyph_inventory

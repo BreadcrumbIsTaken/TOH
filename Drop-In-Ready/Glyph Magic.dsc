@@ -24,11 +24,13 @@ glyphs:
         - clickable display_ice_glyph_instructions save:ice_glyph_clickable
         - clickable display_plant_glyph_instructions save:plant_glyph_clickable
         - clickable display_fire_glyph_instructions save:fire_glyph_clickable
+        - clickable display_invisible_glyph_instructions save:invisible_glyph_clickable
 
         - narrate "To see the crafting recipe for the <yellow>Light Glyph<reset>, click <blue><element[here!].on_click[<entry[light_glyph_clickable].command>]>"
         - narrate "To see the crafting recipe for the <yellow>Ice Glyph<reset>, click <blue><element[here!].on_click[<entry[ice_glyph_clickable].command>]>"
         - narrate "To see the crafting recipe for the <yellow>Plant Glyph<reset>, click <blue><element[here!].on_click[<entry[plant_glyph_clickable].command>]>"
         - narrate "To see the crafting recipe for the <yellow>Fire Glyph<reset>, click <blue><element[here!].on_click[<entry[fire_glyph_clickable].command>]>"
+        - narrate "To see the crafting recipe for the <yellow>Invisible Glyph<reset>, click <blue><element[here!].on_click[<entry[invisible_glyph_clickable].command>]>"
         - narrate <green>---
         - run glyph_weapons
     light:
@@ -103,6 +105,15 @@ glyphs:
         ignite:
             - modifyblock <[1]> fire
             - playsound sound:BLOCK_FIRE_EXTINGUISH <[1]> pitch:.5
+    invisible:
+        cast:
+            - cast invisibility amplifier:0 duration:10s hide_particles no_icon
+            - playeffect at:<player.location> effect:PORTAL quantity:20
+            - playsound sound:BLOCK_PORTAL_TRIGGER <player.location> pitch:3
+        remove:
+            - cast invisibility remove
+            - playeffect at:<player.location> effect:PORTAL quantity:20
+            - playsound sound:BLOCK_PORTAL_TRIGGER <player.location> pitch:3
 
 light_follower_particle_update:
     type: task
@@ -249,7 +260,8 @@ fire_glyph:
     material: orange_dye
     display name: <yellow>Fire Glyph
     lore:
-        - <white>Right click to use!
+        - <white>Right click to shoot a fireball!
+        - <white>Shift right click to catch a block on fire!
     enchantments:
         - sharpness:1
     mechanisms:
@@ -264,6 +276,26 @@ fire_glyph:
 fire_glyph_projectile:
     type: item
     material: fire_charge
+
+invisible_glyph:
+    type: item
+    material: magenta_dye
+    display name: <yellow>Invisible Glyph
+    lore:
+        - <white>Right click to turn invisible!
+        - <white>Works for 10 seconds.
+        - <white>If you move within those 10 seconds,
+        - <white>the ability ends.
+    enchantments:
+        - sharpness:1
+    mechanisms:
+        hides: ENCHANTS
+    recipes:
+        1:
+            type: shaped
+            input:
+                - glass|air
+                - paper|ink_sac
 
 how_to_craft_light_glyph_inventory:
     type: inventory
@@ -385,6 +417,26 @@ display_fire_glyph_instructions:
     script:
         - inventory open d:how_to_craft_fire_glyph_inventory
 
+how_to_craft_invisible_glyph_inventory:
+    type: inventory
+    inventory: chest
+    title: Invisible Glyph Recipie
+    gui: true
+    size: 45
+    procedural items:
+        - determine <list[].pad_right[45].with[black_stained_glass_pane]>
+    slots:
+        - [] [] [] [] [] [] [] [] []
+        - [] [glass] [air] [air] [] [] [] [] []
+        - [] [paper] [ink_sac] [air] [] [] [] [invisible_glyph] []
+        - [] [air] [air] [air] [] [] [] [] []
+        - [] [] [] [] [] [] [] [] []
+
+display_invisible_glyph_instructions:
+    type: task
+    script:
+        - inventory open d:how_to_craft_invisible_glyph_inventory
+
 activate_glyphs:
     type: world
     events:
@@ -405,6 +457,13 @@ activate_glyphs:
                 - run glyphs.fire.ignite def.1:<context.location>
             - else:
                 - run glyphs.fire.throw
+        on player right clicks block with:invisible_glyph:
+            - if <player.has_flag[using_invisibility_glyph]>:
+                - ratelimit <player> 5s
+                - narrate "<yellow>You can't use this while you are already invisible!"
+            - else:
+                - flag player using_invisibility_glyph expire:10s
+                - run glyphs.invisible.cast
 
 # Will load the schematic into memory when the server starts.
 # This will (most likely) prevent the ice glyph pillar from loading a bit slower the first time it is preformed after the server resets.
@@ -457,3 +516,10 @@ prevent_dying_of_sheep:
     events:
         on sheep dyed color:
             - determine cancelled
+
+trigger_invisibility_glyph_off:
+    type: world
+    events:
+        on player steps on block flagged:using_invisibility_glyph:
+            - flag player using_invisibility_glyph:!
+            - run glyphs.invisible.remove

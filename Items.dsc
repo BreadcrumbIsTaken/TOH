@@ -106,7 +106,8 @@ fire_glyph:
     material: orange_dye
     display name: <yellow>Fire Glyph
     lore:
-        - <white>Right click to use!
+        - <white>Right click to shoot a fireball!
+        - <white>Shift right click to catch a block on fire!
     enchantments:
         - sharpness:1
     mechanisms:
@@ -121,3 +122,23 @@ fire_glyph:
 fire_glyph_projectile:
     type: item
     material: fire_charge
+
+invisible_glyph:
+    type: item
+    material: magenta_dye
+    display name: <yellow>Invisible Glyph
+    lore:
+        - <white>Right click to turn invisible!
+        - <white>Works for 10 seconds.
+        - <white>If you move within those 10 seconds,
+        - <white>the ability ends.
+    enchantments:
+        - sharpness:1
+    mechanisms:
+        hides: ENCHANTS
+    recipes:
+        1:
+            type: shaped
+            input:
+                - glass|air
+                - paper|ink_sac
