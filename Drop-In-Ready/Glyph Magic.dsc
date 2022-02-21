@@ -13,7 +13,7 @@
 #-      GitHub URL:
 #-          https://github.com/BreadcrumbIsTaken/TOH
 #-      License:
-#-          ISC: https://github.com/BreadcrumbIsTaken/TOH/blob/main/LICENSE.txt
+#-          Apache License 2.0: https://github.com/BreadcrumbIsTaken/TOH/blob/main/LICENSE.txt
 
 #-      Happy Programming!
 
