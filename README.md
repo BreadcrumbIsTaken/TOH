@@ -38,7 +38,7 @@ To use a glyph, right click it!
     
 ### Need help?
     
-You can join my [discord server](https://discord.gg/F5fGYQJfgw) and ask in #🆘・need-help
+You can join my [discord server](https://discord.gg/F5fGYQJfgw) and ask in `#🆘・need-help`
 
 ### Found a bug?
   
