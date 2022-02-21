@@ -32,7 +32,17 @@ and it will reload all the scripts, allowing you to start having fun and messing
 
 After you finished setting up the code, you can use the `/glyphs` command to get the crafting recipies of each glyph.
 
+If you're an operator on the server you can just do `/ex give <GLYPH NAME>` on the server, replacing "<GLYPH NAME>" with the name of the glyph.
+
 To use a glyph, right click it!
+    
+### Need help?
+    
+You can join my [discord server](https://discord.gg/F5fGYQJfgw) and ask in #🆘・need-help
+
+### Found a bug?
+  
+Please open an issue here on this GitHub on the Issues tab.
 
 ### License
 
