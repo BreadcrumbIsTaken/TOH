@@ -1,4 +1,4 @@
-# Glyph Magic in Minecraft!
+# Glyph Magic in Minecraft! 🪄
 
 A recreation of Luz Noceda's glyph magic from The Owl House in Denizen!
 
