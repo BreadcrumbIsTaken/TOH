@@ -46,6 +46,8 @@ Please open an issue here on this GitHub on the Issues tab.
 
 ### License
 
+If you are using this script in a video, please provide some form of credit. Linking to this repository will suffice. :)
+
 <details>
 <summary>This code is licensed under the Apache License 2.0 license.</summary>
     
