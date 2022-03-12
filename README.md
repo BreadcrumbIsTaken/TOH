@@ -2,6 +2,10 @@
 
 A recreation of Luz Noceda's glyph magic from The Owl House in Denizen!
 
+# Watch the creation!
+
+You can watch the process of me making this in my [YouTube video](https://youtu.be/QIy7DovWA0g)!
+
 ### How to setup for your own server
 
 ##### Step 1
