@@ -8,7 +8,7 @@ You can watch the process of me making this in my [YouTube video](https://youtu.
 
 ### Terms of Use
 
-If you are using this script in a video, please provide some form of credit. Linking to this repository will suffice. :) Also see license [here](https://github.com/BreadcrumbIsTaken/TOH/main/README.md#license)
+If you are using this script in a video, please provide some form of credit. Linking to this repository will suffice. :) Also see license [here](https://github.com/BreadcrumbIsTaken/TOH/blob/main/README.md#license)
 
 ### How to setup for your own server
 
