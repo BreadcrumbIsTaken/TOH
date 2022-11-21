@@ -19,6 +19,7 @@
 
 glyphs:
     type: task
+    debug: false
     script:
         - clickable display_light_glyph_instructions save:light_glyph_clickable
         - clickable display_ice_glyph_instructions save:ice_glyph_clickable
@@ -44,10 +45,10 @@ glyphs:
             - playsound sound:BLOCK_CANDLE_EXTINGUISH <player.location> pitch:.5
 
             - equip <[light_follower]> head:light_glyph_floating_object_head
-            - attach <[light_follower]> to:<player> offset:0,-2,0 sync_server
+            - attach <[light_follower]> to:<player> offset:-1,.5,-1 sync_server
 
             - repeat 20:
-                - run light_follower_particle_update def:<[light_follower]>
+                - playeffect effect:end_rod at:<[light_follower].location.add[.5,4.5,.5]> quantity:5
                 - wait 1s
 
             - attach <[light_follower]> to:cancel
@@ -115,14 +116,9 @@ glyphs:
             - playeffect at:<player.location> effect:PORTAL quantity:20
             - playsound sound:BLOCK_PORTAL_TRIGGER <player.location> pitch:3
 
-light_follower_particle_update:
-    type: task
-    definitions: follower
-    script:
-        - playeffect effect:end_rod at:<[follower].location.add[.5,4.5,.5]> quantity:5
-
 glyph_weapons:
     type: task
+    debug: false
     script:
         - clickable display_ice_sword_instructions save:ice_sword_clickable
         - clickable display_plant_sword_instructions save:plant_sword_clickable
@@ -143,6 +139,7 @@ glyph_weapons:
 
 glyphs_command:
     type: command
+    debug: false
     name: glyph
     usage: /glyph
     aliases:
@@ -154,6 +151,7 @@ glyphs_command:
 
 light_glyph:
     type: item
+    debug: false
     material: yellow_dye
     display name: <yellow>Light Glyph
     lore:
@@ -171,12 +169,14 @@ light_glyph:
 
 light_glyph_floating_object_head:
     type: item
+    debug: false
     material: player_head
     mechanisms:
         skull_skin: 17b9fdf7-6ca9-414b-b07d-9d694125e611|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQzNmEzNjFjMjFkOGY3YmQ0YWM2Mzg1NzVjM2I2NzdmMGJlMWFmODE4ZjRjMWEyODQ3MDUxNTUzMTQzZDkxZSJ9fX0=
 
 ice_glyph:
     type: item
+    debug: false
     material: light_blue_dye
     display name: <yellow>Ice Glyph
     lore:
@@ -194,6 +194,7 @@ ice_glyph:
 
 ice_sword:
     type: item
+    debug: false
     material: iron_sword
     display name: <yellow>Ice Sword
     lore:
@@ -217,6 +218,7 @@ ice_sword:
 
 plant_glyph:
     type: item
+    debug: false
     material: green_dye
     display name: <yellow>Plant Glyph
     lore:
@@ -234,6 +236,7 @@ plant_glyph:
 
 plant_sword:
     type: item
+    debug: false
     material: stone_sword
     display name: <yellow>Plant Sword
     lore:
@@ -257,6 +260,7 @@ plant_sword:
 
 fire_glyph:
     type: item
+    debug: false
     material: orange_dye
     display name: <yellow>Fire Glyph
     lore:
@@ -275,10 +279,12 @@ fire_glyph:
 
 fire_glyph_projectile:
     type: item
+    debug: false
     material: fire_charge
 
 invisible_glyph:
     type: item
+    debug: false
     material: magenta_dye
     display name: <yellow>Invisible Glyph
     lore:
@@ -299,6 +305,7 @@ invisible_glyph:
 
 how_to_craft_light_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Light Glyph Recipie
     gui: true
@@ -314,11 +321,13 @@ how_to_craft_light_glyph_inventory:
 
 display_light_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_light_glyph_inventory
 
 how_to_craft_ice_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Ice Glyph Recipie
     gui: true
@@ -334,11 +343,13 @@ how_to_craft_ice_glyph_inventory:
 
 display_ice_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_ice_glyph_inventory
 
 how_to_craft_ice_sword_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Ice Glyph Recipie (Smithing table)
     gui: true
@@ -354,11 +365,13 @@ how_to_craft_ice_sword_glyph_inventory:
 
 display_ice_sword_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_ice_sword_glyph_inventory
 
 how_to_craft_plant_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Plant Glyph Recipie
     gui: true
@@ -374,11 +387,13 @@ how_to_craft_plant_glyph_inventory:
 
 display_plant_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_plant_glyph_inventory
 
 how_to_craft_plant_sword_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Plant Glyph Recipie (Smithing table)
     gui: true
@@ -394,11 +409,13 @@ how_to_craft_plant_sword_glyph_inventory:
 
 display_plant_sword_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_plant_sword_glyph_inventory
 
 how_to_craft_fire_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Fire Glyph Recipie
     gui: true
@@ -414,6 +431,7 @@ how_to_craft_fire_glyph_inventory:
 
 display_fire_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_fire_glyph_inventory
 
@@ -439,6 +457,7 @@ display_invisible_glyph_instructions:
 
 activate_glyphs:
     type: world
+    debug: false
     events:
         on player right clicks block with:light_glyph:
             - run glyphs.light
@@ -469,12 +488,14 @@ activate_glyphs:
 # This will (most likely) prevent the ice glyph pillar from loading a bit slower the first time it is preformed after the server resets.
 load_ice_glyph_pillar_schematic:
     type: world
+    debug: false
     events:
         on server start:
             - schematic load name:ice_glyph_pillar_slice
 
 activate_ice_sword:
     type: world
+    debug: false
     events:
         on player damaged by player with:ice_sword:
             - ratelimit <player> 5s
@@ -491,6 +512,7 @@ activate_ice_sword:
 
 activate_plant_sword:
     type: world
+    debug: false
     events:
         on player damaged by player with:plant_sword:
             - ratelimit <player> 5s
@@ -504,6 +526,7 @@ activate_plant_sword:
 
 prevent_glyph_power_damage:
     type: world
+    debug: false
     events:
         on player damaged by fall flagged:using_ice_glyph:
             - determine cancelled
@@ -513,12 +536,14 @@ prevent_glyph_power_damage:
 # You can tell that because this is here that I accidentally dyed a sheep with a glyph while testing. :|
 prevent_dying_of_sheep:
     type: world
+    debug: false
     events:
         on sheep dyed color:
             - determine cancelled
 
 trigger_invisibility_glyph_off:
     type: world
+    debug: false
     events:
         on player steps on block flagged:using_invisibility_glyph:
             - flag player using_invisibility_glyph:!

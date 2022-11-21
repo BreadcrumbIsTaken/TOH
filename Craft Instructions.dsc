@@ -1,5 +1,6 @@
 how_to_craft_light_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Light Glyph Recipie
     gui: true
@@ -15,11 +16,13 @@ how_to_craft_light_glyph_inventory:
 
 display_light_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_light_glyph_inventory
 
 how_to_craft_ice_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Ice Glyph Recipie
     gui: true
@@ -35,11 +38,13 @@ how_to_craft_ice_glyph_inventory:
 
 display_ice_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_ice_glyph_inventory
 
 how_to_craft_ice_sword_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Ice Glyph Recipie (Smithing table)
     gui: true
@@ -55,11 +60,13 @@ how_to_craft_ice_sword_glyph_inventory:
 
 display_ice_sword_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_ice_sword_glyph_inventory
 
 how_to_craft_plant_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Plant Glyph Recipie
     gui: true
@@ -75,11 +82,13 @@ how_to_craft_plant_glyph_inventory:
 
 display_plant_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_plant_glyph_inventory
 
 how_to_craft_plant_sword_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Plant Glyph Recipie (Smithing table)
     gui: true
@@ -95,11 +104,13 @@ how_to_craft_plant_sword_glyph_inventory:
 
 display_plant_sword_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_plant_sword_glyph_inventory
 
 how_to_craft_fire_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Fire Glyph Recipie
     gui: true
@@ -115,11 +126,13 @@ how_to_craft_fire_glyph_inventory:
 
 display_fire_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_fire_glyph_inventory
 
 how_to_craft_invisible_glyph_inventory:
     type: inventory
+    debug: false
     inventory: chest
     title: Invisible Glyph Recipie
     gui: true
@@ -135,5 +148,6 @@ how_to_craft_invisible_glyph_inventory:
 
 display_invisible_glyph_instructions:
     type: task
+    debug: false
     script:
         - inventory open d:how_to_craft_invisible_glyph_inventory

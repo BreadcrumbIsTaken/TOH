@@ -1,5 +1,6 @@
 activate_glyphs:
     type: world
+    debug: false
     events:
         on player right clicks block with:light_glyph:
             - run glyphs.light
@@ -30,12 +31,14 @@ activate_glyphs:
 # This will (most likely) prevent the ice glyph pillar from loading a bit slower the first time it is preformed after the server resets.
 load_ice_glyph_pillar_schematic:
     type: world
+    debug: false
     events:
         on server start:
             - schematic load name:ice_glyph_pillar_slice
 
 activate_ice_sword:
     type: world
+    debug: false
     events:
         on player damaged by player with:ice_sword:
             - ratelimit <player> 5s
@@ -52,6 +55,7 @@ activate_ice_sword:
 
 activate_plant_sword:
     type: world
+    debug: false
     events:
         on player damaged by player with:plant_sword:
             - ratelimit <player> 5s
@@ -65,6 +69,7 @@ activate_plant_sword:
 
 prevent_glyph_power_damage:
     type: world
+    debug: false
     events:
         on player damaged by fall flagged:using_ice_glyph:
             - determine cancelled
@@ -74,12 +79,14 @@ prevent_glyph_power_damage:
 # You can tell that because this is here that I accidentally dyed a sheep with a glyph while testing. :|
 prevent_dying_of_sheep:
     type: world
+    debug: false
     events:
         on sheep dyed color:
             - determine cancelled
 
 trigger_invisibility_glyph_off:
     type: world
+    debug: false
     events:
         on player steps on block flagged:using_invisibility_glyph:
             - flag player using_invisibility_glyph:!

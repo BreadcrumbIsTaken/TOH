@@ -1,5 +1,6 @@
 glyphs:
     type: task
+    debug: false
     script:
         - clickable display_light_glyph_instructions save:light_glyph_clickable
         - clickable display_ice_glyph_instructions save:ice_glyph_clickable
@@ -25,10 +26,10 @@ glyphs:
             - playsound sound:BLOCK_CANDLE_EXTINGUISH <player.location> pitch:.5
 
             - equip <[light_follower]> head:light_glyph_floating_object_head
-            - attach <[light_follower]> to:<player> offset:0,-2,0 sync_server
+            - attach <[light_follower]> to:<player> offset:-1,.5,-1 sync_server
 
             - repeat 20:
-                - run light_follower_particle_update def:<[light_follower]>
+                - playeffect effect:end_rod at:<[light_follower].location.add[.5,4.5,.5]> quantity:5
                 - wait 1s
 
             - attach <[light_follower]> to:cancel
@@ -96,14 +97,9 @@ glyphs:
             - playeffect at:<player.location> effect:PORTAL quantity:20
             - playsound sound:BLOCK_PORTAL_TRIGGER <player.location> pitch:3
 
-light_follower_particle_update:
-    type: task
-    definitions: follower
-    script:
-        - playeffect effect:end_rod at:<[follower].location.add[.5,4.5,.5]> quantity:5
-
 glyph_weapons:
     type: task
+    debug: false
     script:
         - clickable display_ice_sword_instructions save:ice_sword_clickable
         - clickable display_plant_sword_instructions save:plant_sword_clickable
@@ -124,6 +120,7 @@ glyph_weapons:
 
 glyphs_command:
     type: command
+    debug: false
     name: glyph
     usage: /glyph
     aliases:

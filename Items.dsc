@@ -1,5 +1,6 @@
 light_glyph:
     type: item
+    debug: false
     material: yellow_dye
     display name: <yellow>Light Glyph
     lore:
@@ -17,12 +18,14 @@ light_glyph:
 
 light_glyph_floating_object_head:
     type: item
+    debug: false
     material: player_head
     mechanisms:
         skull_skin: 17b9fdf7-6ca9-414b-b07d-9d694125e611|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMWQzNmEzNjFjMjFkOGY3YmQ0YWM2Mzg1NzVjM2I2NzdmMGJlMWFmODE4ZjRjMWEyODQ3MDUxNTUzMTQzZDkxZSJ9fX0=
 
 ice_glyph:
     type: item
+    debug: false
     material: light_blue_dye
     display name: <yellow>Ice Glyph
     lore:
@@ -40,6 +43,7 @@ ice_glyph:
 
 ice_sword:
     type: item
+    debug: false
     material: iron_sword
     display name: <yellow>Ice Sword
     lore:
@@ -63,6 +67,7 @@ ice_sword:
 
 plant_glyph:
     type: item
+    debug: false
     material: green_dye
     display name: <yellow>Plant Glyph
     lore:
@@ -80,6 +85,7 @@ plant_glyph:
 
 plant_sword:
     type: item
+    debug: false
     material: stone_sword
     display name: <yellow>Plant Sword
     lore:
@@ -103,6 +109,7 @@ plant_sword:
 
 fire_glyph:
     type: item
+    debug: false
     material: orange_dye
     display name: <yellow>Fire Glyph
     lore:
@@ -121,10 +128,12 @@ fire_glyph:
 
 fire_glyph_projectile:
     type: item
+    debug: false
     material: fire_charge
 
 invisible_glyph:
     type: item
+    debug: false
     material: magenta_dye
     display name: <yellow>Invisible Glyph
     lore:
