@@ -43,10 +43,10 @@ After you finished setting up the code, you can use the `/glyphs` command to get
 If you're an operator on the server you can just do `/ex give <GLYPH NAME>` on the server, replacing "<GLYPH NAME>" with the name of the glyph.
 
 To use a glyph, right click it!
-    
-### Need help?
-    
-You can join my [discord server](https://discord.gg/F5fGYQJfgw) and ask in `#🆘・need-help`
+
+### Not sure how to setup a server?
+
+[Follow this guide](https://guide.denizenscript.com/guides/first-steps/local-test-server.html#how-do-i-set-up-a-local-server)
 
 ### Found a bug?
   
